@@ -33,7 +33,14 @@ class Solution:
             # Sort checkpoints from least to greatest
             #type num: list of int
             #return type: int
-            checkpoints.sort()
+            
+            for i in range(len(checkpoints) - 1):
+                current = checkpoints[i]
+                next = checkpoints[i + 1]
+                if(next < current):
+                    checkpoints[i] = next
+                    checkpoints[i + 1] = current
+
             dist = 0
             for i in range(len(checkpoints) - 1):
                 c = checkpoints[i]
