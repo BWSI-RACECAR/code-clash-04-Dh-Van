@@ -34,12 +34,15 @@ class Solution:
             #type num: list of int
             #return type: int
             
-            for i in range(len(checkpoints) - 1):
-                current = checkpoints[i]
-                next = checkpoints[i + 1]
-                if(next < current):
-                    checkpoints[i] = next
-                    checkpoints[i + 1] = current
+            for _ in checkpoints:
+                for i in range(len(checkpoints) - 1):
+                    current = checkpoints[i]
+                    next = checkpoints[i + 1]
+                    if(next < current):
+                        checkpoints[i] = next
+                        checkpoints[i + 1] = current
+
+            print(checkpoints)
 
             dist = 0
             for i in range(len(checkpoints) - 1):
